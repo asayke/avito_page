@@ -16,12 +16,12 @@ class MyApp extends StatelessWidget {
       designSize: const Size(375, 941),
       minTextAdapt: true,
       splitScreenMode: true,
-      builder: (BuildContext context, Widget? child) { 
-          return MaterialApp(
-        theme: ThemeData.light(),
-        home: const HomePage(),
-      );
-       },
+      builder: (BuildContext context, Widget? child) {
+        return MaterialApp(
+          theme: ThemeData.light(),
+          home: const HomePage(),
+        );
+      },
     );
   }
 }

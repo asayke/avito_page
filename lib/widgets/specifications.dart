@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../utils/app_icons.dart';
 import '../utils/app_text_styles.dart';
+import 'more_detailed.dart';
 
 class SpecificationsWidget extends StatelessWidget {
   const SpecificationsWidget({super.key});
@@ -27,7 +28,10 @@ class SpecificationsWidget extends StatelessWidget {
           SizedBox(
             height: 10.h,
           ),
-          Text("Об объекте", style: AppTextStyles.aboutObjectTextStyle,),
+          Text(
+            "Об объекте",
+            style: AppTextStyles.aboutObjectTextStyle,
+          ),
           const PropertyWidget(
               iconPath: AppIcons.borderOuter1Icon,
               propertyName: "Планировка",
@@ -40,6 +44,10 @@ class SpecificationsWidget extends StatelessWidget {
               iconPath: AppIcons.tools1Icon,
               propertyName: "Ремонт",
               propertyValue: "Без ремонта"),
+          SizedBox(
+            height: 7.h,
+          ),
+          const MoreDetailedButton(),
         ],
       ),
     );

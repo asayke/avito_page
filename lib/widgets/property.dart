@@ -6,6 +6,7 @@ class PropertyWidget extends StatelessWidget {
   final String iconPath;
   final String propertyName;
   final String propertyValue;
+  
   const PropertyWidget({
     super.key,
     required this.iconPath,
@@ -39,7 +40,7 @@ class PropertyWidget extends StatelessWidget {
             ],
           ),
         ),
-        Divider(),
+        const Divider(),
       ],
     );
   }

@@ -12,7 +12,7 @@ abstract class AppTextStyles {
       letterSpacing: 0.35.w);
 
   static final TextStyle geolocationTextStyle = TextStyle(
-      color: Colors.lightBlue,
+      color: const Color.fromRGBO(0, 122, 255, 1),
       fontSize: 13.sp,
       height: 18.h / 13.sp,
       fontWeight: FontWeight.w400,
@@ -54,5 +54,13 @@ abstract class AppTextStyles {
       fontSize: 12.sp,
       height: 16.h / 12.sp,
       fontWeight: FontWeight.w400,
+      fontFamily: "OpenSans");
+
+  static final TextStyle goToAvitoTitleTextStyle = TextStyle(
+      color: Colors.black,
+      fontWeight: FontWeight.w400,
+      fontSize: 15.sp,
+      height: 22.h / 15.sp,
+      letterSpacing: -0.41.w,
       fontFamily: "OpenSans");
 }

@@ -8,13 +8,12 @@ class MyImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   return Image(
-    //230 450
-             height: 235.h,
-             width: 346.w,
-             image: AssetImage(imagePath), 
-             fit: BoxFit.contain,
-             alignment: Alignment.center,
+    return Image(
+      height: 235.h,
+      width: 346.w,
+      image: AssetImage(imagePath),
+      fit: BoxFit.contain,
+      alignment: Alignment.center,
     );
-   }
+  }
 }

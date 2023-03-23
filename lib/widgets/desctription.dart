@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../utils/app_text_styles.dart';
+import 'more_detailed.dart';
 
 class DescriptionWidget extends StatelessWidget {
   const DescriptionWidget({super.key});
@@ -22,20 +23,14 @@ class DescriptionWidget extends StatelessWidget {
           ),
           SizedBox(height: 11.h),
           Text(
-            "Дом расположен в ЗЖМ, мкр Левенцовский, вблизи остановки общественного транспорта. Рядом расположены гипермаркеты ${"Магнит"},  ${"Пятерочка"}, ${"Лента"}, ${"Метро"}, отделение ${"Сбербанка"}. В районе работают : 6 детских садов, 1 школа. Есть собственная управляющая компания.",
+            'Дом расположен в ЗЖМ, мкр Левенцовский, вблизи остановки общественного транспорта. Рядом расположены гипермаркеты "Магнит", "Пятерочка", "Лента", "Метро", отделение "Сбербанка". В районе работают : 6 детских садов, 1 школа. Есть собственная управляющая компания.',
             style: AppTextStyles.descriptionTextStyle,
             textAlign: TextAlign.left,
           ),
           SizedBox(
             height: 7.h,
           ),
-          Row(children: [
-            SvgPicture.asset(AppIcons.chevronDown1Icon),
-            SizedBox(
-              width: 4.w,
-            ),
-            Text("Подробнее", style: AppTextStyles.geolocationTextStyle),
-          ]),
+          const MoreDetailedButton(),
         ],
       ),
     );

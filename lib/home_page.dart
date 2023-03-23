@@ -1,6 +1,7 @@
 import 'package:avito_page/models/category_model.dart';
 import 'package:avito_page/utils/app_icons.dart';
 import 'package:avito_page/widgets/announcement.dart';
+import 'package:avito_page/widgets/avito_provider.dart';
 import 'package:avito_page/widgets/desctription.dart';
 import 'package:avito_page/widgets/my_image.dart';
 import 'package:avito_page/widgets/specifications.dart';
@@ -23,14 +24,14 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.white,
         actions: [
           IconButton(
-              onPressed: () {},
-              icon: SvgPicture.asset(AppIcons.uploadIcon)),
+              onPressed: () {}, icon: SvgPicture.asset(AppIcons.uploadIcon)),
           IconButton(
               onPressed: () {},
               icon: SvgPicture.asset(AppIcons.threeDots1Icon)),
         ],
       ),
       body: SingleChildScrollView(
+        physics: const AlwaysScrollableScrollPhysics(),
         child: Column(
           children: [
             SizedBox(height: 19.h),
@@ -58,6 +59,10 @@ class HomePage extends StatelessWidget {
             ),
             const DescriptionWidget(),
             const SpecificationsWidget(),
+            SizedBox(
+              height: 10.h,
+            ),
+            const AvitoProviderWidget(),
           ],
         ),
       ),
