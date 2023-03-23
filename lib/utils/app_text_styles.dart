@@ -63,4 +63,12 @@ abstract class AppTextStyles {
       height: 22.h / 15.sp,
       letterSpacing: -0.41.w,
       fontFamily: "OpenSans");
+
+  static final TextStyle adPriceTextStyle = TextStyle(
+      color: Colors.black,
+      fontWeight: FontWeight.w600,
+      height: 20.h / 16.sp,
+      fontSize: 16.sp,
+      letterSpacing: -0.24.w,
+      fontFamily: "OpenSans");
 }

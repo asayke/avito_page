@@ -11,8 +11,8 @@ class Category extends Equatable {
   List<Object?> get props => [number, imagePath];
 
   static List<Category> categories = [
-    const Category(number: 1, imagePath: AppImages.image0),
-    const Category(number: 2, imagePath: AppImages.image1),
-    const Category(number: 3, imagePath: AppImages.image2),
+    const Category(number: 1, imagePath: AppImages.photoCard0),
+    const Category(number: 2, imagePath: AppImages.photoCard1),
+    const Category(number: 3, imagePath: AppImages.photoCard2),
   ];
 }

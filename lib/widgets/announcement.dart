@@ -36,7 +36,12 @@ class AnnouncementWidget extends StatelessWidget {
           height: 27.h,
           width: 82.w,
           color: Colors.yellow,
-          child: const Center(child: Text("2,3 млн ₽")),
+          child: Center(
+              child: RichText(
+                  text: TextSpan(children: [
+            TextSpan(text: "2,3 млн", style: AppTextStyles.adPriceTextStyle),
+            const TextSpan(text: " ₽", style: TextStyle(color: Colors.black)),
+          ]))),
         ),
       ]),
     );
