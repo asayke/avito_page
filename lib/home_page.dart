@@ -1,8 +1,12 @@
 import 'package:avito_page/models/category_model.dart';
+import 'package:avito_page/utils/app_icons.dart';
 import 'package:avito_page/widgets/my_image.dart';
+import 'package:avito_page/widgets/specifications.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'utils/app_text_styles.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -11,13 +15,14 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Предложение", style: TextStyle(
-          color: Colors.black,
-          letterSpacing: -0.41.w,
-          height: 22.h/17.sp,
-          fontSize: 17.sp,
-          fontWeight: FontWeight.w600,
-          )),
+        title: Text("Предложение",
+            style: TextStyle(
+                color: Colors.black,
+                letterSpacing: -0.41.w,
+                height: 22.h / 17.sp,
+                fontSize: 17.sp,
+                fontWeight: FontWeight.w600,
+                fontFamily: "OpenSans")),
         centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.white,
@@ -32,72 +37,60 @@ class HomePage extends StatelessWidget {
               icon: const Icon(Icons.more_horiz)),
         ],
       ),
-      body: Column(children: [
-        Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: 15.w,
-          ),
-          child: Column(
-            children: [
-              SizedBox(height: 19.h),
-              CarouselSlider(
-                options: CarouselOptions(
-                  height: 235.h,
-                  enableInfiniteScroll: false,
-                  viewportFraction: 1,
-                  aspectRatio: 2.0,
-                  enlargeCenterPage: true,
-                  enlargeStrategy: CenterPageEnlargeStrategy.height,
-                ),
-                items: Category.categories
-                    .map((category) => PhotoCarouselCard(
-                          category: category,
-                        ))
-                    .toList(),
+      body: Column(
+        children: [
+          SizedBox(height: 19.h),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15.w),
+            child: CarouselSlider(
+              options: CarouselOptions(
+                height: 235.h,
+                enableInfiniteScroll: false,
+                viewportFraction: 1,
+                aspectRatio: 2.0,
+                enlargeCenterPage: true,
+                enlargeStrategy: CenterPageEnlargeStrategy.height,
               ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Padding(
-                  padding: EdgeInsets.only(top: 12.0.h),
-                  child: Text(
-                    "Квартира-студия, 40м, 16/23 эт.",
-                    style: TextStyle(
-                      height: 25.h/18.sp,
-                      fontWeight: FontWeight.w400,
-                      letterSpacing: -0.24.w,
-                      fontSize: 18.sp,
-                    ),
-                  ),
-                ),
-              ),
-              Row(children: [
-                Icon(
-                  size: 16.r,
-                  Icons.location_on_outlined,
-                  color: Colors.lightBlue,
-                ),
-                SizedBox(width: 4.w,),
-                Text(
-                  "Центр (Кировский р-н.), Очаковская, 39",
-                  style: TextStyle(
-                    color: Colors.lightBlue,
-                    fontSize: 13.sp,
-                    height: 18.h/13.sp,
-                    fontWeight: FontWeight.w400,
-                    letterSpacing: -0.08.w,
-                  ),
-                )
-              ]),
-            ],
+              items: Category.categories
+                  .map((category) => PhotoCarouselCard(
+                        category: category,
+                      ))
+                  .toList(),
+            ),
           ),
-        ),
-        SizedBox(height: 10.0.h),
-        Align(
-          alignment: Alignment.topLeft,
-          child: Padding(
-            padding: EdgeInsets.only(left: 16.0.w),
+          Align(
+            alignment: Alignment.topLeft,
+            child: Padding(
+              padding: EdgeInsets.only(top: 12.0.h, left: 15.w),
+              child: Text(
+                "Квартира-студия, 40м, 16/23 эт.",
+                style: AppTextStyles.adNameTextStyle,
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 15.w),
+            child: Row(children: [
+              Icon(
+                size: 16.r,
+                Icons.location_on_outlined,
+                color: Colors.lightBlue,
+              ),
+              SizedBox(
+                width: 4.w,
+              ),
+              Text("Центр (Кировский р-н.), Очаковская, 39",
+                  style: AppTextStyles.geolocationTextStyle)
+            ]),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 15.w),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                SizedBox(
+                  height: 10.h,
+                ),
                 Container(
                   height: 27.h,
                   width: 82.w,
@@ -107,17 +100,23 @@ class HomePage extends StatelessWidget {
                 SizedBox(
                   height: 40.h,
                 ),
-                 Text("Описание", textAlign: TextAlign.left, style: TextStyle(
-                    fontSize: 16.sp,
-                    height: 20.h/16.sp,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: -0.24.w,
-                ),),
+                Text(
+                  "Описание",
+                  textAlign: TextAlign.left,
+                  style: AppTextStyles.descriptionTitleTextStyle,
+                ),
+                SizedBox(height: 11.h),
+                Text(
+                  "Дом расположен в ЗЖМ, мкр Левенцовский, вблизи остановки общественного транспорта. Рядом расположены гипермаркеты ${"Магнит"},  ${"Пятерочка"}, ${"Лента"}, ${"Метро"}, отделение ${"Сбербанка"}. В районе работают : 6 детских садов, 1 школа. Есть собственная управляющая компания.",
+                  style: AppTextStyles.descriptionTextStyle,
+                  textAlign: TextAlign.left,
+                ),
               ],
             ),
           ),
-        )
-      ]),
+          const SpecificationsWidget(),
+        ],
+      ),
     );
   }
 }
@@ -151,12 +150,11 @@ class PhotoCarouselCard extends StatelessWidget {
                 child: Text(
                   "${category.number}/${Category.categories.length}",
                   style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 9.0.sp,
-                    fontWeight: FontWeight.w400,
-                    letterSpacing: 1.59.w,
-                    height: 10.h / 9.sp
-                  ),
+                      color: Colors.white,
+                      fontSize: 9.0.sp,
+                      fontWeight: FontWeight.w400,
+                      letterSpacing: 1.59.w,
+                      height: 10.h / 9.sp),
                 ),
               ),
             ),
