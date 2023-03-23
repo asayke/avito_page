@@ -38,5 +38,21 @@ abstract class AppTextStyles {
       fontSize: 9.0.sp,
       fontWeight: FontWeight.w400,
       letterSpacing: 1.59.w,
-      height: 10.h / 9.sp);
+      height: 10.h / 9.sp,
+      fontFamily: "OpenSans");
+
+  static final TextStyle titleTextStyle = TextStyle(
+      color: Colors.black,
+      letterSpacing: -0.41.w,
+      height: 22.h / 17.sp,
+      fontSize: 17.sp,
+      fontWeight: FontWeight.w600,
+      fontFamily: "OpenSans");
+
+  static final TextStyle aboutObjectTextStyle = TextStyle(
+      color: const Color.fromRGBO(60, 60, 67, 0.6),
+      fontSize: 12.sp,
+      height: 16.h / 12.sp,
+      fontWeight: FontWeight.w400,
+      fontFamily: "OpenSans");
 }

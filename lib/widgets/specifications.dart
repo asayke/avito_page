@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../utils/app_icons.dart';
+import '../utils/app_text_styles.dart';
 
 class SpecificationsWidget extends StatelessWidget {
   const SpecificationsWidget({super.key});
@@ -19,11 +20,14 @@ class SpecificationsWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Характеристики"),
+          Text(
+            "Характеристики",
+            style: AppTextStyles.descriptionTitleTextStyle,
+          ),
           SizedBox(
             height: 10.h,
           ),
-          Text("Об объекте"),
+          Text("Об объекте", style: AppTextStyles.aboutObjectTextStyle,),
           const PropertyWidget(
               iconPath: AppIcons.borderOuter1Icon,
               propertyName: "Планировка",

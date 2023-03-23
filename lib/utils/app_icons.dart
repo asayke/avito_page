@@ -5,4 +5,5 @@ abstract class AppIcons {
   static const String tools1Icon = "assets/icons/tools 1.svg";
   static const String chevronDown1Icon = "assets/icons/chevron-down 1.svg";
   static const String geoAlt1Icon = "assets/icons/geo-alt1.svg";
+  static const String threeDots1Icon= "assets/icons/three-dots 1.svg";
 }

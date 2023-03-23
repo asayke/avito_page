@@ -7,7 +7,7 @@ import 'package:avito_page/widgets/specifications.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'utils/app_text_styles.dart';
 
 class HomePage extends StatelessWidget {
@@ -17,26 +17,17 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Предложение",
-            style: TextStyle(
-                color: Colors.black,
-                letterSpacing: -0.41.w,
-                height: 22.h / 17.sp,
-                fontSize: 17.sp,
-                fontWeight: FontWeight.w600,
-                fontFamily: "OpenSans")),
+        title: Text("Предложение", style: AppTextStyles.titleTextStyle),
         centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.white,
         actions: [
           IconButton(
-              color: Colors.lightBlue,
               onPressed: () {},
-              icon: const Icon(Icons.upload)),
+              icon: SvgPicture.asset(AppIcons.uploadIcon)),
           IconButton(
-              color: Colors.lightBlue,
               onPressed: () {},
-              icon: const Icon(Icons.more_horiz)),
+              icon: SvgPicture.asset(AppIcons.threeDots1Icon)),
         ],
       ),
       body: SingleChildScrollView(
@@ -62,7 +53,9 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const AnnouncementWidget(),
-            SizedBox(height: 10.h,),
+            SizedBox(
+              height: 10.h,
+            ),
             const DescriptionWidget(),
             const SpecificationsWidget(),
           ],
