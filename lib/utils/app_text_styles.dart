@@ -32,4 +32,11 @@ abstract class AppTextStyles {
       letterSpacing: -0.24.w,
       fontSize: 18.sp,
       fontFamily: "OpenSans");
+
+  static final TextStyle categoryNumberTextStyle = TextStyle(
+      color: Colors.white,
+      fontSize: 9.0.sp,
+      fontWeight: FontWeight.w400,
+      letterSpacing: 1.59.w,
+      height: 10.h / 9.sp);
 }

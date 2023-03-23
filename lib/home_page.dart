@@ -1,5 +1,7 @@
 import 'package:avito_page/models/category_model.dart';
 import 'package:avito_page/utils/app_icons.dart';
+import 'package:avito_page/widgets/announcement.dart';
+import 'package:avito_page/widgets/desctription.dart';
 import 'package:avito_page/widgets/my_image.dart';
 import 'package:avito_page/widgets/specifications.dart';
 import 'package:flutter/material.dart';
@@ -37,85 +39,34 @@ class HomePage extends StatelessWidget {
               icon: const Icon(Icons.more_horiz)),
         ],
       ),
-      body: Column(
-        children: [
-          SizedBox(height: 19.h),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15.w),
-            child: CarouselSlider(
-              options: CarouselOptions(
-                height: 235.h,
-                enableInfiniteScroll: false,
-                viewportFraction: 1,
-                aspectRatio: 2.0,
-                enlargeCenterPage: true,
-                enlargeStrategy: CenterPageEnlargeStrategy.height,
-              ),
-              items: Category.categories
-                  .map((category) => PhotoCarouselCard(
-                        category: category,
-                      ))
-                  .toList(),
-            ),
-          ),
-          Align(
-            alignment: Alignment.topLeft,
-            child: Padding(
-              padding: EdgeInsets.only(top: 12.0.h, left: 15.w),
-              child: Text(
-                "Квартира-студия, 40м, 16/23 эт.",
-                style: AppTextStyles.adNameTextStyle,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height: 19.h),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15.w),
+              child: CarouselSlider(
+                options: CarouselOptions(
+                  height: 235.h,
+                  enableInfiniteScroll: false,
+                  viewportFraction: 1,
+                  aspectRatio: 2.0,
+                  enlargeCenterPage: true,
+                  enlargeStrategy: CenterPageEnlargeStrategy.height,
+                ),
+                items: Category.categories
+                    .map((category) => PhotoCarouselCard(
+                          category: category,
+                        ))
+                    .toList(),
               ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 15.w),
-            child: Row(children: [
-              Icon(
-                size: 16.r,
-                Icons.location_on_outlined,
-                color: Colors.lightBlue,
-              ),
-              SizedBox(
-                width: 4.w,
-              ),
-              Text("Центр (Кировский р-н.), Очаковская, 39",
-                  style: AppTextStyles.geolocationTextStyle)
-            ]),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 15.w),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 10.h,
-                ),
-                Container(
-                  height: 27.h,
-                  width: 82.w,
-                  color: Colors.yellow,
-                  child: const Center(child: Text("2,3 млн ₽")),
-                ),
-                SizedBox(
-                  height: 40.h,
-                ),
-                Text(
-                  "Описание",
-                  textAlign: TextAlign.left,
-                  style: AppTextStyles.descriptionTitleTextStyle,
-                ),
-                SizedBox(height: 11.h),
-                Text(
-                  "Дом расположен в ЗЖМ, мкр Левенцовский, вблизи остановки общественного транспорта. Рядом расположены гипермаркеты ${"Магнит"},  ${"Пятерочка"}, ${"Лента"}, ${"Метро"}, отделение ${"Сбербанка"}. В районе работают : 6 детских садов, 1 школа. Есть собственная управляющая компания.",
-                  style: AppTextStyles.descriptionTextStyle,
-                  textAlign: TextAlign.left,
-                ),
-              ],
-            ),
-          ),
-          const SpecificationsWidget(),
-        ],
+            const AnnouncementWidget(),
+            SizedBox(height: 10.h,),
+            const DescriptionWidget(),
+            const SpecificationsWidget(),
+          ],
+        ),
       ),
     );
   }
@@ -149,12 +100,7 @@ class PhotoCarouselCard extends StatelessWidget {
               child: Center(
                 child: Text(
                   "${category.number}/${Category.categories.length}",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 9.0.sp,
-                      fontWeight: FontWeight.w400,
-                      letterSpacing: 1.59.w,
-                      height: 10.h / 9.sp),
+                  style: AppTextStyles.categoryNumberTextStyle,
                 ),
               ),
             ),
