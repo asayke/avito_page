@@ -11,6 +11,7 @@ class AnnouncementWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Colors.white,
       padding: EdgeInsets.only(left: 16.w, top: 12.h, bottom: 15.h),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Text(

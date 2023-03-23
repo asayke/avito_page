@@ -4,6 +4,7 @@ import 'package:avito_page/widgets/announcement.dart';
 import 'package:avito_page/widgets/avito_provider.dart';
 import 'package:avito_page/widgets/desctription.dart';
 import 'package:avito_page/widgets/my_image.dart';
+import 'package:avito_page/widgets/separation_of_sections.dart';
 import 'package:avito_page/widgets/specifications.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -54,14 +55,11 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const AnnouncementWidget(),
-            SizedBox(
-              height: 10.h,
-            ),
+            const SeparationOfSectionsWidget(),
             const DescriptionWidget(),
+            const SeparationOfSectionsWidget(),
             const SpecificationsWidget(),
-            SizedBox(
-              height: 10.h,
-            ),
+            const SeparationOfSectionsWidget(),
             const AvitoProviderWidget(),
           ],
         ),
