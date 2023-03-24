@@ -1,44 +1,42 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../models/category_model.dart';
 import '../utils/app_text_styles.dart';
-import 'my_image.dart';
 
-class PhotoCarouselCardWidget extends StatelessWidget {
-  final Category category;
+class PhotoCardWidget extends StatelessWidget {
+  final String imagePath;
+  final int number;
 
-  const PhotoCarouselCardWidget({super.key, required this.category});
+  const PhotoCardWidget(
+      {super.key, required this.imagePath, required this.number});
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        MyImage(imagePath: category.imagePath),
-        Positioned(
-          bottom: 0.0.h,
-          left: 0.0.w,
-          right: 0.0.w,
-          child: Container(
-            alignment: Alignment.center,
-            padding: EdgeInsets.only(bottom: 10.0.h),
-            child: Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(3.0)),
-                color: Color.fromARGB(140, 0, 0, 0),
-              ),
-              width: 35.w,
-              height: 16.h,
-              child: Center(
-                child: Text(
-                  "${category.number}/${Category.categories.length}",
-                  style: AppTextStyles.categoryNumberTextStyle,
-                ),
-              ),
+    return Stack(children: [
+      Image.asset(
+        imagePath,
+        height: 235.h,
+        width: 346.w,
+        fit: BoxFit.cover,
+      ),
+      Container(
+        alignment: Alignment.bottomCenter,
+        padding: EdgeInsets.only(bottom: 10.0.h),
+        child: Container(
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(3.0)),
+            color: Color.fromRGBO(0, 0, 0, 0.6),
+          ),
+          width: 35.w,
+          height: 16.h,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 9.w, vertical: 3.h),
+            child: Text(
+              "$number/4",
+              style: AppTextStyles.categoryNumberTextStyle,
             ),
           ),
         ),
-      ],
-    );
+      ),
+    ]);
   }
 }
