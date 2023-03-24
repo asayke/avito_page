@@ -12,7 +12,7 @@ class MyImage extends StatelessWidget {
       height: 235.h,
       width: 346.w,
       image: AssetImage(imagePath),
-      fit: BoxFit.contain,
+      fit: BoxFit.cover,
       alignment: Alignment.center,
     );
   }
