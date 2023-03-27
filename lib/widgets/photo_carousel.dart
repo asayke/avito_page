@@ -1,8 +1,8 @@
+import 'package:avito_page/utils/app_images.dart';
+import 'package:avito_page/utils/app_text_styles.dart';
 import 'package:avito_page/widgets/photo_carousel_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../utils/app_images.dart';
 
 class PhotoCarouselWidget extends StatefulWidget {
   const PhotoCarouselWidget({super.key});
@@ -31,14 +31,35 @@ class _PhotoCarouselWidgetState extends State<PhotoCarouselWidget> {
                 activePage = page;
               });
             },
-            children: const [
-              PhotoCardWidget(imagePath: AppImages.photoCard0, number: 1),
-              PhotoCardWidget(imagePath: AppImages.photoCard1, number: 2),
-              PhotoCardWidget(imagePath: AppImages.photoCard2, number: 3),
-              PhotoCardWidget(imagePath: AppImages.photoCard3, number: 4),
-            ],
+            children: AppImages.photos
+                .map((e) => PhotoCardWidget(imagePath: e))
+                .toList(),
           ),
-        )
+        ),
+        Container(
+          alignment: Alignment.bottomCenter,
+          padding: EdgeInsets.only(bottom: 10.0.h),
+          child: Container(
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.all(
+                Radius.circular(3.0),
+              ),
+              color: Color.fromRGBO(0, 0, 0, 0.6),
+            ),
+            width: 35.w,
+            height: 16.h,
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 9.w,
+                vertical: 3.h,
+              ),
+              child: Text(
+                "${activePage + 1}/4",
+                style: AppTextStyles.categoryNumberTextStyle,
+              ),
+            ),
+          ),
+        ),
       ],
     );
   }

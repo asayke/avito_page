@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class SeparationOfSectionsWidget extends StatelessWidget {
-  const SeparationOfSectionsWidget({super.key});
+class SeparationSectionsWidget extends StatelessWidget {
+  const SeparationSectionsWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

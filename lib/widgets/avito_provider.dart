@@ -23,22 +23,24 @@ class AvitoProviderWidget extends StatelessWidget {
     return Container(
       color: Colors.white,
       padding: EdgeInsets.symmetric(vertical: 11.h),
-      child: Row(children: [
-        SizedBox(
-          width: 101.5.w,
-        ),
-        Image.asset(AppImages.avitoLogoImage),
-        SizedBox(
-          width: 10.w,
-        ),
-        GestureDetector(
-          onTap: () => _launchURL("www.avito.ru"),
-          child: Text(
-            "Смотреть на Avito",
-            style: AppTextStyles.goToAvitoTitleTextStyle,
+      child: Row(
+        children: [
+          SizedBox(
+            width: 101.5.w,
           ),
-        )
-      ]),
+          Image.asset(AppImages.avitoLogoImage),
+          SizedBox(
+            width: 10.w,
+          ),
+          GestureDetector(
+            onTap: () => _launchURL("www.avito.ru"),
+            child: Text(
+              "Смотреть на Avito",
+              style: AppTextStyles.goToAvitoTitleTextStyle,
+            ),
+          )
+        ],
+      ),
     );
   }
 }

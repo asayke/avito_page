@@ -1,8 +1,7 @@
+import 'package:avito_page/utils/app_text_styles.dart';
+import 'package:avito_page/widgets/more_detailed.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../utils/app_text_styles.dart';
-import 'more_detailed.dart';
 
 class DescriptionWidget extends StatelessWidget {
   const DescriptionWidget({super.key});
@@ -11,7 +10,11 @@ class DescriptionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      padding: EdgeInsets.only(left: 16.w, bottom: 15.h, top: 15.h),
+      padding: EdgeInsets.only(
+        left: 16.w,
+        bottom: 15.h,
+        top: 15.h,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

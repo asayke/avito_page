@@ -4,4 +4,11 @@ abstract class AppImages {
   static const String photoCard2 = "assets/images/photo2.jpg";
   static const String photoCard3 = "assets/images/photo3.jpg";
   static const String avitoLogoImage = "assets/images/avito_logo.png";
+
+  static List<String> photos = [
+    photoCard0,
+    photoCard1,
+    photoCard2,
+    photoCard3,
+  ];
 }
